@@ -5,12 +5,14 @@ import (
 	"image/color"
 )
 
+// Vertical is a vertical gradient
 type Vertical struct {
 	width  int
 	height int
 	stops  []Stop
 }
 
+// NewVertical creates a new vertical gradient
 func NewVertical(width, height int, stops []Stop) *Vertical {
 	return &Vertical{
 		width:  width,
@@ -19,14 +21,17 @@ func NewVertical(width, height int, stops []Stop) *Vertical {
 	}
 }
 
+// ColorModel used by the gradient
 func (p *Vertical) ColorModel() color.Model {
 	return color.NRGBAModel
 }
 
+// Bounds is the gradient bounds
 func (p *Vertical) Bounds() image.Rectangle {
 	return image.Rect(0, 0, p.width, p.height)
 }
 
+// At returns the color of the pixel at (x, y)
 func (p *Vertical) At(x, y int) color.Color {
 	if len(p.stops) == 0 {
 		return color.Black
@@ -47,12 +52,14 @@ func (p *Vertical) At(x, y int) color.Color {
 	return getColor(float64(y)/float64(p.height), p.stops)
 }
 
+// Horizontal is a horizontal gradient
 type Horizontal struct {
 	width  int
 	height int
 	stops  []Stop
 }
 
+// NewHorizontal creates a new horizontal gradient
 func NewHorizontal(width, height int, stops []Stop) *Horizontal {
 	return &Horizontal{
 		width:  width,
@@ -61,14 +68,17 @@ func NewHorizontal(width, height int, stops []Stop) *Horizontal {
 	}
 }
 
+// ColorModel used by the gradient
 func (p *Horizontal) ColorModel() color.Model {
 	return color.NRGBAModel
 }
 
+// Bounds is the gradient bounds
 func (p *Horizontal) Bounds() image.Rectangle {
 	return image.Rect(0, 0, p.width, p.height)
 }
 
+// At returns the color of the pixel at (x, y)
 func (p *Horizontal) At(x, y int) color.Color {
 	if x == 0 {
 		return p.stops[0].Color
@@ -85,6 +95,7 @@ func (p *Horizontal) At(x, y int) color.Color {
 	return getColor(float64(x)/float64(p.width), p.stops)
 }
 
+// Stop contains a gradient position and color
 type Stop struct {
 	Position float64
 	Color    color.Color
