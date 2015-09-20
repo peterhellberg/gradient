@@ -34,18 +34,14 @@ func (p *Vertical) Bounds() image.Rectangle {
 // At returns the color of the pixel at (x, y)
 func (p *Vertical) At(x, y int) color.Color {
 	if len(p.stops) == 0 {
-		return color.Black
+		return color.NRGBA{255, 0, 255, 255}
 	}
 
 	if y == 0 {
 		return p.stops[0].Color
 	}
 
-	if y >= p.height {
-		return p.stops[len(p.stops)+1].Color
-	}
-
-	if x >= p.width {
+	if y >= p.height || x >= p.width {
 		return color.Transparent
 	}
 
@@ -80,15 +76,15 @@ func (p *Horizontal) Bounds() image.Rectangle {
 
 // At returns the color of the pixel at (x, y)
 func (p *Horizontal) At(x, y int) color.Color {
+	if len(p.stops) == 0 {
+		return color.NRGBA{255, 0, 255, 255}
+	}
+
 	if x == 0 {
 		return p.stops[0].Color
 	}
 
-	if x >= p.width {
-		return p.stops[len(p.stops)+1].Color
-	}
-
-	if y >= p.height {
+	if x >= p.width || y >= p.height {
 		return color.Transparent
 	}
 
