@@ -35,8 +35,20 @@ func TestNewVertical(t *testing.T) {
 		r1, g1, b1, a1 := tt.c.RGBA()
 
 		if r0 != r1 || g0 != g1 || b0 != b1 || a0 != a1 {
-			t.Fatalf("[%d] v.At(%d, %d) = %+v, want %+v", tt.x, tt.y, i, c, tt.c)
+			t.Fatalf("[%d] v.At(%d, %d) = %+v, want %+v", i, tt.x, tt.y, c, tt.c)
 		}
+	}
+}
+
+func TestNewVertical_noStops(t *testing.T) {
+	v := NewVertical(200, 400, []Stop{}).At(100, 150)
+	c := color.NRGBA{255, 0, 255, 255}
+
+	r0, g0, b0, a0 := v.RGBA()
+	r1, g1, b1, a1 := c.RGBA()
+
+	if r0 != r1 || g0 != g1 || b0 != b1 || a0 != a1 {
+		t.Fatalf("v.At(%d, %d) = %+v, want %+v", 200, 400, v, c)
 	}
 }
 
@@ -74,5 +86,17 @@ func TestNewHorizontal(t *testing.T) {
 		if r0 != r1 || g0 != g1 || b0 != b1 || a0 != a1 {
 			t.Fatalf("[%d] h.At(%d, %d) = %+v, want %+v", i, tt.x, tt.y, c, tt.c)
 		}
+	}
+}
+
+func TestNewHorizontal_noStops(t *testing.T) {
+	v := NewHorizontal(200, 400, []Stop{}).At(100, 150)
+	c := color.NRGBA{255, 0, 255, 255}
+
+	r0, g0, b0, a0 := v.RGBA()
+	r1, g1, b1, a1 := c.RGBA()
+
+	if r0 != r1 || g0 != g1 || b0 != b1 || a0 != a1 {
+		t.Fatalf("v.At(%d, %d) = %+v, want %+v", 200, 400, v, c)
 	}
 }
