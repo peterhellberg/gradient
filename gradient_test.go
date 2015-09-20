@@ -27,6 +27,7 @@ func TestNewVertical(t *testing.T) {
 		c color.Color
 	}{
 		{100, 100, color.NRGBA{106, 0, 149, 255}},
+		{200, 200, color.NRGBA{213, 0, 42, 255}},
 	} {
 		c := v.At(tt.x, tt.y)
 
