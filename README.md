@@ -25,7 +25,7 @@ import (
 func main() {
 	v := gradient.NewVertical(200, 100, []gradient.Stop{
 		{0.0, color.NRGBA{0, 0, 255, 255}},
-		{0.0, color.NRGBA{0, 0, 255, 255}},
+		{0.5, color.NRGBA{128, 0, 128, 255}},
 		{1.0, color.NRGBA{255, 0, 0, 255}},
 	})
 
