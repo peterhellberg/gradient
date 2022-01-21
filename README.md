@@ -51,8 +51,8 @@ func saveImage(m image.Image, path string) error {
 
 ## Results
 
-![vertical-gradient.png](http://assets.c7.se/viz/vertical-gradient.png)
-![horizontal-gradient.png](http://assets.c7.se/viz/horizontal-gradient.png)
+![vertical-gradient.png](https://assets.c7.se/viz/vertical-gradient.png)
+![horizontal-gradient.png](https://assets.c7.se/viz/horizontal-gradient.png)
 
 ## License (MIT)
 
