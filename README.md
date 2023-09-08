@@ -1,7 +1,7 @@
 # gradient
 
 [![Build Status](https://travis-ci.org/peterhellberg/gradient.svg?branch=master)](https://travis-ci.org/peterhellberg/gradient)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/peterhellberg/gradient)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://pkg.go.dev/github.com/peterhellberg/gradient)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/peterhellberg/gradient#license-mit)
 
 ## Installation
@@ -56,7 +56,7 @@ func saveImage(m image.Image, path string) error {
 
 ## License (MIT)
 
-Copyright (c) 2015-2019 [Peter Hellberg](https://c7.se)
+Copyright (c) 2015-2023 [Peter Hellberg](https://c7.se)
 
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
