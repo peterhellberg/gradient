@@ -1,6 +1,6 @@
 # gradient
 
-[![Build Status](https://travis-ci.org/peterhellberg/gradient.svg?branch=master)](https://travis-ci.org/peterhellberg/gradient)
+[![Build status](https://github.com/peterhellberg/gradient/actions/workflows/test.yml/badge.svg)](https://github.com/peterhellberg/gradient/actions/workflows/test.yml)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://pkg.go.dev/github.com/peterhellberg/gradient)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/peterhellberg/gradient#license-mit)
 
